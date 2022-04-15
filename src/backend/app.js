@@ -14,6 +14,7 @@ app.use(express.static(buildPath));
 
 // Parse URL-encoded bodies (as sent by HTML forms)
 app.use(express.urlencoded({ extended: true }));
+
 // Parse JSON bodies (as sent by API clients)
 app.use(express.json());
 
@@ -24,7 +25,7 @@ router.use("/meals", mealsRouter);
 if (process.env.API_PATH) {
   app.use(process.env.API_PATH, router);
 } else {
-  throw "API_PATH is not set. Remember to set it in your .env file"
+  throw "API_PATH is not set. Remember to set it in your .env file";
 }
 
 // for the frontend. Will first be covered in the react class
