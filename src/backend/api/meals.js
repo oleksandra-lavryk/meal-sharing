@@ -6,84 +6,72 @@ const knex = require("../database");
 
 router.get("/", async (request, response) => {
   try {
-    let mealArrayToChange = await knex
-      .raw(
-        `SELECT meal.id,meal.title, meal.description, meal.location,meal.when_time, meal.price, meal.created_date,
-      meal.max_reservations,
-      COALESCE(SUM(reservation.number_of_guests),0) AS total_reserved
-      FROM   meal
-      LEFT JOIN reservation
-      ON meal.id = reservation.meal_id
-      GROUP  BY meal.id`
-      )
-      .then((result) => result[0]);
+    let queryToMeal = knex("meal");
 
-    if (Object.keys(request.query).length === 0) {
-      response.send(mealArrayToChange);
-      return;
+    if (
+      typeof request.query["availableReservations"] !== "undefined" &&
+      request.query["availableReservations"] === "true"
+    ) {
+      queryToMeal = queryToMeal
+        .leftJoin("reservation", "meal.id", "=", "reservation.meal_id")
+        .select(
+          "meal.id",
+          "meal.title",
+          "meal.description",
+          "meal.location",
+          "meal.when_time",
+          "meal.created_date",
+          "meal.price",
+          "meal.max_reservations",
+          knex.raw(
+            "COALESCE(SUM(reservation.number_of_guests),0) as total_guests"
+          ),
+          knex.raw(
+            "(meal.max_reservations-COALESCE(SUM(reservation.number_of_guests),0)) AS available_reservation"
+          )
+        )
+        .groupBy("meal.id")
+        .having(
+          knex.raw(
+            "(max_reservations > COALESCE(SUM(reservation.number_of_guests),0))"
+          )
+        );
     }
 
-    if (typeof request.query["availableReservations"] !== "undefined") {
-      if (request.query["availableReservations"] === "true") {
-        mealArrayToChange = mealArrayToChange.filter(
-          (item) => item.total_reserved < item.max_reservations
-        );
-      } else if (request.query["availableReservations"] === "false") {
-        mealArrayToChange = mealArrayToChange.filter(
-          (item) =>
-            Number(item.total_reserved) === Number(item.max_reservations)
-        );
-      } else {
-        response
-          .status(400)
-          .json({ error: "Invalid availableReservations param" });
-        return;
-      }
-    }
-
-    if (request.query["maxPrice"]) {
-      if (!isNaN(Number(request.query["maxPrice"]))) {
-        mealArrayToChange = mealArrayToChange.filter(
-          (item) => item.price < Number(request.query["maxPrice"])
-        );
-      } else {
-        response.status(400).json({ error: "Invalid maxPrice param" });
-        return;
-      }
+    if (
+      request.query["maxPrice"] &&
+      !isNaN(Number(request.query["maxPrice"]))
+    ) {
+      queryToMeal = queryToMeal.where("price", "<", request.query["maxPrice"]);
     }
 
     if (request.query["title"]) {
-      mealArrayToChange = mealArrayToChange.filter((item) =>
-        item.title.toLowerCase().includes(request.query["title"].toLowerCase())
+      queryToMeal = queryToMeal.where(
+        "title",
+        "like",
+        "%" + request.query["title"] + "%"
       );
     }
 
     if (request.query["createdAfter"]) {
       const createdAfter = new Date(request.query["createdAfter"]);
       if (createdAfter != "Invalid Date") {
-        mealArrayToChange = mealArrayToChange.filter((item) => {
-          const itemDate = new Date(item.createdAt);
-          return itemDate > createdAfter;
-        });
+        queryToMeal = queryToMeal.where("created_date", ">", createdAfter);
       } else {
-        response.status(400).json({ error: "Invalid date param" });
+        response.status(400).json({ error: "Invalid date value" });
         return;
       }
     }
 
-    if (request.query["limit"]) {
-      if (!isNaN(Number(request.query["limit"]))) {
-        mealArrayToChange = mealArrayToChange.slice(0, request.query["limit"]);
-      } else {
-        response.status(400).json({ error: "Invalid limit param" });
-        return;
-      }
+    if (request.query["limit"] && !isNaN(Number(request.query["limit"]))) {
+      queryToMeal = queryToMeal.limit(request.query["limit"]);
     }
 
-    if (mealArrayToChange.length === 0) {
+    const allMeals = await queryToMeal;
+    if (allMeals.length === 0) {
       response.status(404).json({ message: "Meals not found" });
     } else {
-      response.json(mealArrayToChange);
+      response.json(allMeals);
     }
   } catch (error) {
     throw error;
