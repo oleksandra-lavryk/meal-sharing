@@ -30,12 +30,12 @@ router.get("/", async (request, response) => {
             "(meal.max_reservations-COALESCE(SUM(reservation.number_of_guests),0)) AS available_reservation"
           )
         )
-        .groupBy("meal.id")
-        .having(
-          knex.raw(
-            "(max_reservations > COALESCE(SUM(reservation.number_of_guests),0))"
-          )
-        );
+        .groupBy("meal.id");
+      // .having(
+      //   knex.raw(
+      //     "(max_reservations > COALESCE(SUM(reservation.number_of_guests),0))"
+      //   )
+      // );
     }
 
     if (
@@ -86,16 +86,26 @@ router.get("/:id", async (request, response) => {
       return;
     }
     const meal = await knex("meal")
-      .where({ id: mealId })
+      .leftJoin("reservation", "meal.id", "=", "reservation.meal_id")
       .select(
-        "title",
-        "description",
-        "location",
-        "when_time",
-        "max_reservations",
-        "price",
-        "created_date"
-      );
+        "meal.id",
+        "meal.title",
+        "meal.description",
+        "meal.location",
+        "meal.when_time",
+        "meal.max_reservations",
+        "meal.price",
+        "meal.created_date",
+        knex.raw(
+          "COALESCE(SUM(reservation.number_of_guests),0) as total_guests"
+        ),
+        knex.raw(
+          "(meal.max_reservations-COALESCE(SUM(reservation.number_of_guests),0)) AS available_reservation"
+        )
+      )
+      .groupBy("meal.id")
+      .where("meal.id", mealId);
+
     if (meal.length === 0) {
       response.status(404).json({ message: "Meal not found" });
     } else {
