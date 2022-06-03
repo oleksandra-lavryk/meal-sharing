@@ -15,7 +15,6 @@ export function Header() {
         <Link to="/">Home</Link>
         <Link to="/meals">Meals</Link>
         <Link to="/add-meal">Add Meal</Link>
-        <Link to="/about">About</Link>
         <Link to="/contacts">Contacts</Link>
       </nav>
     </header>
