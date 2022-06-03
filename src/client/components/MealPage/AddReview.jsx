@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useContext } from "react";
 import { MealsContext } from "../MealsContextProvider";
-import addIcon from "../../assets/images/add.svg";
+import { FiPlusSquare } from "react-icons/fi";
 
 export function AddReview(props) {
   const { getTodayDate } = useContext(MealsContext);
@@ -38,7 +38,7 @@ export function AddReview(props) {
   return (
     <>
       <div className="add-review-container" onClick={toggleAddForm}>
-        <img src={addIcon} alt="add review icon" />
+        <FiPlusSquare />
         <p>Add review</p>
       </div>
       {isActive ? (

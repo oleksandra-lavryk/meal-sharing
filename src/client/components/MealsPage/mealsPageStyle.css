@@ -25,9 +25,7 @@
   color: #000000;
 }
 
-.meal-card-icon {
-  width: 20px;
-  height: 20px;
+.meal-card-info svg {
   margin-right: 7px;
 }
 

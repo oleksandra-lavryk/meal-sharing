@@ -1,5 +1,6 @@
 import React from "react";
-import StarIcon from "../../assets/images/star.svg";
+import { AiTwotoneStar } from "react-icons/ai";
+
 export function ReviewStar() {
-  return <img className="star-icon" src={StarIcon} alt="review star" />;
+  return <AiTwotoneStar />;
 }

@@ -74,14 +74,10 @@ form button {
   align-items: center;
 }
 
-.review-stars .star-icon:not(:last-child) {
-  margin-right: 3px;
+.review-stars svg:not(:last-child) {
+  margin-right: 2px;
 }
 
-.star-icon {
-  width: 15px;
-  height: 15px;
-}
 
 .add-review-container {
   display: inline-flex;
@@ -99,10 +95,8 @@ form button {
   color: #aaccaa;
 }
 
-.add-review-container img {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
+.add-review-container svg {
+  margin-right: 7px;
 }
 
 

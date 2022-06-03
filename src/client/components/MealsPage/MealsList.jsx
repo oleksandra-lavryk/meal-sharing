@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PriceIcon from "../../assets/images/price.svg";
-import LocationIcon from "../../assets/images/location.svg";
+import { GoLocation } from "react-icons/go";
+import { GiTwoCoins } from "react-icons/gi";
 
 export function MealsList(props) {
   return (
@@ -12,15 +12,11 @@ export function MealsList(props) {
             {meal.title}
           </Link>
           <div className="meal-card-info">
-            <img
-              className="meal-card-icon"
-              src={LocationIcon}
-              alt="location icon"
-            />
+            <GoLocation />
             {meal.location}
           </div>
           <div className="meal-card-info">
-            <img className="meal-card-icon" src={PriceIcon} alt="price icon" />
+            <GiTwoCoins />
             <strong>{meal.price}</strong>
           </div>
           <Link to={`/meals/${meal.id}`} className="meal-card-button">

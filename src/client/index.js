@@ -8,6 +8,7 @@ import "./components/MealsPage/mealsPageStyle.css";
 import "./components/MealPage/mealPageStyle.css";
 import "./components/PageNotFound/pageNotFoudStyle.css";
 import "./components/AddMealPage/addMealStyle.css";
+import "./components/ContactsPage/contactPageStyle.css";
 
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
