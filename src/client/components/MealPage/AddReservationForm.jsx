@@ -9,7 +9,7 @@ export function AddReservationForm(props) {
 
   function makeReservation(e) {
     e.preventDefault();
-    fetch("/api/reservations", {
+    fetch("api/reservations", {
       method: "POST",
       body: JSON.stringify({
         number_of_guests: e.target.number_of_guests.value,

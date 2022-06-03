@@ -12,7 +12,7 @@ export function MealsPage() {
 
   useEffect(() => {
     setError("");
-    fetch(`/api/meals?title=${mealTitle}`)
+    fetch(`api/meals?title=${mealTitle}`)
       .then((resonse) => {
         if (resonse.ok) {
           return resonse.json();
