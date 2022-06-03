@@ -12,42 +12,80 @@ export function ContactsPage() {
       <h2 className="contact-title">Contact Us</h2>
       <div className="contact-socials-container">
         <div className="contact-social-item">
-          <a className="contact-social-item-icon" href="">
+          <a
+            className="contact-social-item-icon"
+            href="mailto:oleksandra.lavryk96@gmail.com"
+          >
             <AiOutlineMail />
           </a>
-          <a className="contact-social-item-text" href="">
+          <a
+            className="contact-social-item-text"
+            href="mailto:oleksandra.lavryk96@gmail.com"
+          >
             <span>Email</span>
           </a>
         </div>
         <div className="contact-social-item">
-          <a className="contact-social-item-icon" href="">
+          <a
+            className="contact-social-item-icon"
+            href="tel:+4512345678"
+            target="_blank"
+          >
             <BsFillTelephoneFill />
           </a>
-          <a className="contact-social-item-text" href="">
+          <a
+            className="contact-social-item-text"
+            href="tel:+4512345678"
+            target="_blank"
+          >
             <span>+45 12 34 56 78</span>
           </a>
         </div>
         <div className="contact-social-item">
-          <a className="contact-social-item-icon" href="">
+          <a
+            className="contact-social-item-icon"
+            target="_blank"
+            href="https://www.instagram.com/"
+          >
             <BsInstagram />
           </a>
-          <a className="contact-social-item-text" href="">
+          <a
+            className="contact-social-item-text"
+            target="_blank"
+            href="https://www.instagram.com/"
+          >
             <span>Instagram</span>
           </a>
         </div>
         <div className="contact-social-item">
-          <a className="contact-social-item-icon" href="">
+          <a
+            className="contact-social-item-icon"
+            href="https://www.youtube.com/"
+            target="_blank"
+          >
             <FaYoutube />
           </a>
-          <a className="contact-social-item-text" href="">
+          <a
+            className="contact-social-item-text"
+            href="https://www.youtube.com/"
+            target="_blank"
+          >
             <span>YouTube</span>
           </a>
         </div>
         <div className="contact-social-item">
-          <a className="contact-social-item-icon" href="">
+          <a
+            className="contact-social-item-icon"
+            href="https://www.facebook.com/"
+            target="_blank"
+          >
             <FaFacebook />
           </a>
-          <a className="contact-social-item-text" href="">
+          <a
+            className="contact-social-item-text"
+            href="https://www.facebook.com/"
+            target="_blank"
+          >
             <span>Facebook</span>
           </a>
         </div>

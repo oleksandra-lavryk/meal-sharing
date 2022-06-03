@@ -7,7 +7,9 @@
 .meal-card {
   padding: 20px;
   background-color: #f1f0f1;
-  color: #2e2d2d
+  color: #2e2d2d;
+  display: flex;
+  flex-direction: column;
 }
 
 .meal-card:hover {
@@ -32,6 +34,7 @@
 .meal-card-button {
   display: inline-block;
   border: 1px solid #2e2d2d;
+  color: #2e2d2d;
   border-radius: 0;
   margin-top: 15px;
   padding: 6px 20px;
@@ -39,6 +42,8 @@
   text-transform: uppercase;
   font-size: 16px;
   transition: 0.3s ease;
+  place-self: flex-start;
+  margin-top: auto;
 }
 
 .meal-card-button:hover {
