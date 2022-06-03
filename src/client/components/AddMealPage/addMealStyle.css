@@ -1,0 +1,8 @@
+.add-new-meal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f1f0f1;
+  padding: 20px;
+  padding-bottom: 30px;
+}

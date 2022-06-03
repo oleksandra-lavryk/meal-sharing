@@ -1,0 +1,30 @@
+.footer {
+  background-color: #2e2d2d;
+  color: #ffffff;
+  padding: 25px 0;
+  text-align: center;
+}
+
+.footer-socials-links ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.footer-socials-links ul>li:not(:last-child) {
+  margin-right: 7px;
+}
+
+.footer-socials-links svg {
+  width: 20px;
+  height: 20px;
+}
+
+.footer-socials-links svg path {
+  fill: #ffffff;
+}
+
+.footer-socials-links svg:hover path {
+  fill: #86cdd7;
+}

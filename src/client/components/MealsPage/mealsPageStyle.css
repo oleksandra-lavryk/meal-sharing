@@ -1,0 +1,94 @@
+.meals-cards-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.meal-card {
+  padding: 20px;
+  background-color: #f1f0f1;
+  color: #2e2d2d
+}
+
+.meal-card:hover {
+  background-color: #ffe5b9;
+}
+
+.meal-card-title {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.meal-card-title:hover {
+  color: #000000;
+}
+
+.meal-card-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 7px;
+}
+
+.meal-card-button {
+  display: inline-block;
+  border: 1px solid #2e2d2d;
+  border-radius: 0;
+  margin-top: 15px;
+  padding: 6px 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+.meal-card-button:hover {
+  color: #fff;
+  border-color: #2e2d2d;
+  background-color: #2e2d2d;
+}
+
+.meal-card-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
+.search-input {
+  border-radius: 0;
+  border: none;
+  border-bottom: 2px solid #f1f0f1;
+  margin: auto;
+  margin-bottom: 40px;
+  width: calc(50% - 10px);
+  transition: border 0.3s ease-out;
+}
+
+.search-input,
+.search-input::placeholder {
+  font-size: 16px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #ffe5b9;
+}
+
+@media screen and (max-width: 991px) {
+  .meals-cards-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .meals-cards-list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+  }
+
+  .meal-card {
+    padding: 15px;
+  }
+}

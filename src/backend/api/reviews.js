@@ -7,6 +7,7 @@ const knex = require("../database");
 router.get("/", async (request, response) => {
   try {
     const queryToReview = await knex("review").select(
+      "id",
       "title",
       "description",
       "created_date",
