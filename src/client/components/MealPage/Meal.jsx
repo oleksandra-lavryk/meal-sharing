@@ -5,7 +5,7 @@ import { AddReservationForm } from "./AddReservationForm";
 import { MealReviews } from "./MealReviews";
 
 async function fetchMeal(id) {
-  const response = await fetch(`http://localhost:5000/api/meals/${id}`);
+  const response = await fetch(`/api/meals/${id}`);
   const data = await response.json();
   return data;
 }

@@ -9,7 +9,7 @@ export function AddNewMeal() {
 
   function addNewMeal(e) {
     e.preventDefault();
-    fetch("http://localhost:5000/api/meals", {
+    fetch("/api/meals", {
       method: "POST",
       body: JSON.stringify({
         title: e.target.title.value,

@@ -14,7 +14,7 @@ export function MealReviews(props) {
 
   async function fetchReviews() {
     setIsLoading(true);
-    fetch("http://localhost:5000/api/reviews")
+    fetch("/api/reviews")
       .then((resonse) => {
         if (resonse.ok) {
           return resonse.json();

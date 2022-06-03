@@ -13,7 +13,7 @@ export function AddReview(props) {
   }
   function addReview(e) {
     e.preventDefault();
-    fetch("http://localhost:5000/api/reviews", {
+    fetch("/api/reviews", {
       method: "POST",
       body: JSON.stringify({
         title: e.target.name.value,
