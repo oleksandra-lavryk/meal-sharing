@@ -1,0 +1,83 @@
+.contact-title {
+  text-transform: uppercase;
+  margin: 50px 0;
+}
+
+.contact-title:first-of-type {
+  margin-top: 10px;
+}
+
+.contact-title:last-of-type {
+  margin-bottom: 30px;
+}
+
+.contact-socials-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px
+}
+
+
+.contact-social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-social-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background-color: #f1f0f1;
+  border-radius: 50%;
+}
+
+.contact-social-item:nth-of-type(2n-1) .contact-social-item-icon:hover {
+  background-color: #aaccaa;
+}
+
+.contact-social-item:nth-of-type(2n) .contact-social-item-icon:hover {
+  background-color: #ffe5b9;
+}
+
+.contact-social-item:nth-of-type(3) .contact-social-item-icon:hover {
+  background-color: #86cdd7;
+}
+
+.contact-social-item-icon:hover svg path {
+  fill: #ffffff
+}
+
+.contact-social-item-text {
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.contact-social-item svg {
+  width: 45px;
+  height: 45px;
+}
+
+.address-text {
+  text-align: center;
+}
+
+.address-map {
+  border: none;
+}
+
+@media screen and (max-width: 750px) {
+  .contact-social-item-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .contact-social-item svg {
+    width: 30px;
+    height: 30px;
+  }
+}

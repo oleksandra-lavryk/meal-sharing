@@ -1,0 +1,125 @@
+.meal-container {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.meal-container p {
+  margin: 10px 0;
+}
+
+.reservation-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f0f1;
+  padding: 25px;
+  padding-top: 15px;
+  margin: 20px auto;
+}
+
+form button {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.none-reservstion {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.reviews-title {
+  margin: 30px auto;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.reviews-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.reviews-list li {
+  padding: 15px;
+  background-color: #ffe5b9;
+}
+
+.review-title {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.review-author {
+  font-weight: 700;
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+
+.review-date {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.review-text {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.review-stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-stars svg:not(:last-child) {
+  margin-right: 2px;
+}
+
+
+.add-review-container {
+  display: inline-flex;
+  align-items: center;
+  margin: 30px 0;
+  cursor: pointer;
+}
+
+.add-review-container p {
+  font-weight: 700;
+  margin: 0;
+}
+
+.add-review-container:hover {
+  color: #aaccaa;
+}
+
+.add-review-container svg {
+  margin-right: 7px;
+}
+
+
+@media screen and (max-width: 991px) {
+  .reviews-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 750px) {
+
+  .reviews-list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .add-review-container {
+    margin: 20px 0;
+  }
+
+  .reviews-list {
+    grid-template-columns: 1fr;
+  }
+}
