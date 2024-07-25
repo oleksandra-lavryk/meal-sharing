@@ -1,6 +1,4 @@
-const { query } = require("express");
 const express = require("express");
-const { where } = require("../database");
 const router = express.Router();
 const knex = require("../database");
 

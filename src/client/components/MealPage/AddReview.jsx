@@ -28,7 +28,7 @@ export function AddReview(props) {
     }).then((result) => {
       if (result.ok) {
         setIsActive(false);
-        alert("Review successfully reserved");
+        alert("Thank you for your feedback!");
         props.refreshReviews();
       } else {
         setFetchError("Something went wrong. Try again later.");

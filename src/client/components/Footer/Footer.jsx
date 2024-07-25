@@ -47,7 +47,7 @@ export function Footer() {
           </li>
         </ul>
       </nav>
-      <strong>&copy; 2022</strong>
+      <strong>&copy; 2024</strong>
     </footer>
   );
 }
