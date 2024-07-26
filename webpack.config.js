@@ -1,8 +1,9 @@
 require("dotenv").config();
-const path = require("path");
-const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
+import path, { dirname } from 'path';
+// const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+import { fileURLToPath } from 'url';
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -71,7 +72,7 @@ module.exports = {
       template: "./public/index.html",
       favicon: "./public/favicon.ico",
     }),
-    new CaseSensitivePathsPlugin(),
+    // new CaseSensitivePathsPlugin(),
     new Dotenv({
       safe: false,
     }),
