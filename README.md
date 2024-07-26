@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
- <img width=200px height=200px src="https://www.hackyourfuture.dk/static/logo-dark.svg" alt="Project logo"></a>
+ <img width=150px height=100px src="https://www.hackyourfuture.dk/static/logo-dark.svg" alt="Project logo"></a>
 </p>
 
 <h3 align="center">Meal sharing api</h3>
@@ -22,27 +22,21 @@
 
 - [About](#about)
 - [Getting Started](#getting_started)
-- [Deployment](#deployment)
 - [Usage](#usage)
 - [Built Using](#built_using)
 - [Authors](#authors)
 
 ## 🧐 About <a name = "about"></a>
 
-Link to deployed website: 
+Link to deployed website: [MealSharing](https://meal-sharing-2ar5.onrender.com/) 
 
-This project will be built out over 3 different classes:
+This project will was built out over 3 different classes:
 
-- **Nodejs week 3** - Here you will be building the backend api. Meaning you will work in the `src/backend` folder.
-- **React week 5** - Here you will be building the frontend components and routing. In this week you will be working in the `src/client` folder.
-- **Meal sharing class** - After week 5 of react you will have a specific class for finishing the meal sharing website. Here you will make everything work and deploy the website to the internet
+- **Nodejs week 3** - Here we were building the backend api. We worked in the `src/backend` folder.
+- **React week 5** - Here we were building the frontend components and routing. This week we worked in the `src/client` folder.
+- **Meal sharing class** - After week 5 of react we had a specific class for finishing the MealSsharing website. We made everything work and deployed the website to the internet.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
-
-
-## Deployment <a name = "deployment"></a>
-
-Check here how to depoly an app on Heroku https://github.com/HackYourFuture-CPH/node.js/blob/main/deployment.md and watch this video https://www.youtube.com/watch?v=A9ZcSOc7hCw
 
 
 ### Environment variables
@@ -71,6 +65,12 @@ The api can now be found on `http://localhost:3000/api/` an example is `http://l
 - [Mysql](https://www.npmjs.com/package/mysql) - Database
 - [Express](https://expressjs.com/) - Server Framework
 - [NodeJs](https://nodejs.org/en/) - Server Environment
+
+## ☁️ Deployment <a name = "deployment"></a>
+
+Deployed using [Render](https://render.com/)
+
+[Deployment guide](https://github.com/HackYourFuture-CPH/deployment-guide)
 
 ## ✍️ Authors <a name = "authors"></a>
 
