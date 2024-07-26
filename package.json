@@ -2,9 +2,7 @@
   "name": "meal-sharing",
   "version": "1.0.0",
   "description": "Website for sharing meals",
-  "engines": {
-    "node": "^8.11.1"
-  },
+
   "scripts": {
     "build": "webpack --mode production",
     "start": "npm run build && node ./src/backend/server",
@@ -15,6 +13,7 @@
   },
   "author": "Benjamin Hughes",
   "license": "MIT",
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@babel/core": "^7.12.3",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
