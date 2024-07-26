@@ -1,16 +1,10 @@
 require("dotenv").config();
-import path, { dirname } from 'path';
-// const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
+const path = require("path");
+const CaseSensitivePathsPlugin = require("case-sensitive-paths-webpack-plugin");
 const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-import { fileURLToPath } from 'url';
 
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-
-const outputDirectory = 'dist';
+const outputDirectory = "dist";
 
 module.exports = {
   entry: ["babel-polyfill", "./src/client/index.js"],
@@ -72,7 +66,7 @@ module.exports = {
       template: "./public/index.html",
       favicon: "./public/favicon.ico",
     }),
-    // new CaseSensitivePathsPlugin(),
+    new CaseSensitivePathsPlugin(),
     new Dotenv({
       safe: false,
     }),
